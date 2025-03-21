@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import List from './assets/components/list';
 import ItemList from './assets/components/ItemList';
-import { Link } from "react-router";
-import { getPost } from './services/api';
+import { Link } from "react-router-dom";
+import { getPosts } from './services/api';
 
 function App() {
   const [tareas, setTareas] = useState([]);
@@ -14,7 +14,7 @@ function App() {
   };
 
   useEffect(() => {
-    getPost().then((post) => console.log(post));
+    getPosts().then((post) => console.log(post));
   }, []);
 
   return (
